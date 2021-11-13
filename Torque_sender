@@ -1,0 +1,522 @@
+{
+  "Config": {
+    "Build": {
+      "Board": "arduino:avr:nano:cpu=atmega328old"
+    }
+  },
+  "Version": "2",
+  "Product": "Visuino - Visual Arduino Programming",
+  "Content": "OpenWire Diagram",
+  "Units": [
+    {
+      "Type": "Diagram",
+      "Name": "__OpenWireRootUnit__",
+      "*": [
+        {
+          "X": 1216,
+          "Name": "Arduino",
+          "Instance": {
+            "AnalogInput": {
+              "*": [
+                {
+                  "+": "TArduinoAnalogOptionalAsDigitalInputChannel"
+                },
+                {
+                  "+": "TArduinoAnalogOptionalAsDigitalInputChannel"
+                }
+              ]
+            },
+            "Serial": {
+              "*": [
+                {
+                  "+": "TArduinoHardwareSerial"
+                }
+              ]
+            },
+            "+": "TArduinoBoard",
+            "Modules": {
+              "*": [
+                {
+                  "+": "TArduinoEEPROMModule"
+                },
+                {
+                  "+": "TArduinoWatchdogTimerModule"
+                },
+                {
+                  "+": "TArduinoProcessor328Module"
+                }
+              ]
+            },
+            "I2CChannels": {
+              "*": [
+                {
+                  "+": "TArduinoI2C"
+                }
+              ]
+            },
+            "Digital": {
+              "*": [
+                {
+                  "+": "TArduinoAdditionalDigitalSerial0Channel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalSerial0Channel"
+                },
+                {
+                  "DigitalInputPin": {
+                    "SourcePin": {
+                      "ID": "__OpenWireRootUnit__.NRF24L011.ChipSelectOutputPin"
+                    }
+                  },
+                  "+": "TArduinoAdditionalDigitalInterruptChannel"
+                },
+                {
+                  "DigitalInputPin": {
+                    "SourcePin": {
+                      "ID": "__OpenWireRootUnit__.NRF24L011.ChipEnableOutputPin"
+                    }
+                  },
+                  "+": "TArduinoBasicDigitalPWMInterruptChannel"
+                },
+                {
+                  "DigitalInputPin": {
+                    "SourcePin": {
+                      "ID": "__OpenWireRootUnit__.NRF24L011.CarrierDetectedOutputPin"
+                    }
+                  },
+                  "+": "TArduinoAdditionalDigitalChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMChannel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalChannel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMChannel"
+                },
+                {
+                  "+": "TArduinoBasicDigitalPWMSPI0Channel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalSPI0Channel"
+                },
+                {
+                  "+": "TArduinoAdditionalDigitalSPI0Channel"
+                },
+                {
+                  "+": "TArduinoCombinedAnalogDigitalChannel"
+                },
+                {
+                  "+": "TArduinoCombinedAnalogDigitalChannel"
+                },
+                {
+                  "OutputPin": {
+                    "SinkPins": [
+                      {
+                        "ID": "__OpenWireRootUnit__.Force_to_Torque.InputPin"
+                      }
+                    ]
+                  },
+                  "+": "TArduinoCombinedAnalogDigitalChannel"
+                },
+                {
+                  "+": "TArduinoCombinedAnalogDigitalChannel"
+                },
+                {
+                  "+": "TArduinoCombinedAnalogDigitalI2C0Channel"
+                },
+                {
+                  "+": "TArduinoCombinedAnalogDigitalI2C0Channel"
+                }
+              ]
+            },
+            "SPIChannels": {
+              "*": [
+                {
+                  "InputPin": {
+                    "SourcePins": [
+                      {
+                        "ID": "__OpenWireRootUnit__.NRF24L011.InterfaceOutputPin"
+                      }
+                    ]
+                  },
+                  "+": "TArduinoSPI"
+                }
+              ]
+            },
+            "BoardType": "Arduino Nano"
+          },
+          "Type": "Component",
+          "Y": 256
+        },
+        {
+          "X": 528,
+          "Name": "Packet1",
+          "Instance": {
+            "OutputPin": {
+              "SinkPins": [
+                {
+                  "ID": "__OpenWireRootUnit__.NRF24L011.InputPin"
+                }
+              ]
+            },
+            "+": "TArduinoPacket",
+            "HeadMarker": {
+              "Bytes": {
+                "_Data": ""
+              }
+            },
+            "Elements": {
+              "*": [
+                {
+                  "Name": "Analog1",
+                  "InputPin": {
+                    "SourcePin": {
+                      "ID": "__OpenWireRootUnit__.Force_to_Torque.OutputPin"
+                    }
+                  },
+                  "+": "TArduinoAnalogBinaryPacketElement",
+                  "Visualization": {
+                    "Instrument": {
+                      "+": "TArduinoPacketElementFloatAngularGauge"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "Type": "Component",
+          "Y": 256
+        },
+        {
+          "X": 720,
+          "Name": "NRF24L011",
+          "Instance": {
+            "ChipEnableOutputPin": {
+              "SinkPins": [
+                {
+                  "Name": "__OpenWireRootUnit__.Arduino.Digital[3].DigitalInputPin",
+                  "ID": "__OpenWireRootUnit__.Arduino.Digital._Item3.DigitalInputPin"
+                }
+              ]
+            },
+            "InputPin": {
+              "SourcePins": [
+                {
+                  "ID": "__OpenWireRootUnit__.Packet1.OutputPin"
+                }
+              ]
+            },
+            "+": "TArduinoNRF24L01",
+            "ChipSelectOutputPin": {
+              "SinkPins": [
+                {
+                  "Name": "__OpenWireRootUnit__.Arduino.Digital[2].DigitalInputPin",
+                  "ID": "__OpenWireRootUnit__.Arduino.Digital._Item2.DigitalInputPin"
+                }
+              ]
+            },
+            "InterfaceOutputPin": {
+              "SinkPins": [
+                {
+                  "Name": "__OpenWireRootUnit__.Arduino.SPIChannels.SPI.InputPin",
+                  "ID": "__OpenWireRootUnit__.Arduino.SPIChannels._Item0.InputPin"
+                }
+              ]
+            },
+            "CarrierDetectedOutputPin": {
+              "SinkPins": [
+                {
+                  "Name": "__OpenWireRootUnit__.Arduino.Digital[4].DigitalInputPin",
+                  "ID": "__OpenWireRootUnit__.Arduino.Digital._Item4.DigitalInputPin"
+                }
+              ]
+            }
+          },
+          "Type": "Component",
+          "Y": 256
+        },
+        {
+          "X": 256,
+          "Name": "AccelerometerGyroscope1",
+          "Instance": {
+            "Accelerometer": {
+              "OutputPins": {
+                "Form": "__OpenWireRootUnit__",
+                "Count": 3,
+                "Pins": [
+                  {
+                    "Type": "ptSource",
+                    "SinkPins": [
+                      {
+                        "Name": "__OpenWireRootUnit__.AccelerationToAngle1.InputPins.X",
+                        "ID": "__OpenWireRootUnit__.AccelerationToAngle1.InputPins._Pin0"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "ptSource",
+                    "SinkPins": [
+                      {
+                        "Name": "__OpenWireRootUnit__.AccelerationToAngle1.InputPins.Y",
+                        "ID": "__OpenWireRootUnit__.AccelerationToAngle1.InputPins._Pin1"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "ptSource",
+                    "SinkPins": [
+                      {
+                        "Name": "__OpenWireRootUnit__.AccelerationToAngle1.InputPins.Z",
+                        "ID": "__OpenWireRootUnit__.AccelerationToAngle1.InputPins._Pin2"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "+": "TArduinoMPU6050I2C",
+            "Gyroscope": {
+              "OutputPins": {
+                "Count": 3
+              }
+            },
+            "Thermometer": {
+              "OutputPin": {
+                "SinkPins": [
+                  {
+                    "Name": "__OpenWireRootUnit__.Packet2.Elements.Analog.InputPin",
+                    "ID": "__OpenWireRootUnit__.Packet2.Elements._Item3.InputPin"
+                  }
+                ]
+              }
+            }
+          },
+          "Type": "Component",
+          "Y": 368
+        },
+        {
+          "X": 720,
+          "Name": "Packet2",
+          "Instance": {
+            "Elements": {
+              "*": [
+                {
+                  "Name": "Acc.1",
+                  "InputPin": {
+                    "SourcePin": {
+                      "Name": "__OpenWireRootUnit__.AccelerationToAngle1.OutputPins.X(Roll)",
+                      "ID": "__OpenWireRootUnit__.AccelerationToAngle1.OutputPins._Pin0"
+                    }
+                  },
+                  "+": "TArduinoAnalogBinaryPacketElement",
+                  "Visualization": {
+                    "Instrument": {
+                      "+": "TArduinoPacketElementFloatAngularGauge"
+                    }
+                  }
+                },
+                {
+                  "Name": "Acc.2",
+                  "InputPin": {
+                    "SourcePin": {
+                      "Name": "__OpenWireRootUnit__.AccelerationToAngle1.OutputPins.Y(Pitch)",
+                      "ID": "__OpenWireRootUnit__.AccelerationToAngle1.OutputPins._Pin1"
+                    }
+                  },
+                  "+": "TArduinoAnalogBinaryPacketElement",
+                  "Visualization": {
+                    "Instrument": {
+                      "+": "TArduinoPacketElementFloatAngularGauge"
+                    }
+                  }
+                },
+                {
+                  "Name": "Acc.3",
+                  "InputPin": {
+                    "SourcePin": {
+                      "Name": "__OpenWireRootUnit__.AccelerationToAngle1.OutputPins.Z(Yaw)",
+                      "ID": "__OpenWireRootUnit__.AccelerationToAngle1.OutputPins._Pin2"
+                    }
+                  },
+                  "+": "TArduinoAnalogBinaryPacketElement",
+                  "Visualization": {
+                    "Instrument": {
+                      "+": "TArduinoPacketElementFloatAngularGauge"
+                    }
+                  }
+                },
+                {
+                  "Name": "Temp.",
+                  "InputPin": {
+                    "SourcePin": {
+                      "ID": "__OpenWireRootUnit__.AccelerometerGyroscope1.Thermometer.OutputPin"
+                    }
+                  },
+                  "+": "TArduinoAnalogBinaryPacketElement",
+                  "Visualization": {
+                    "Instrument": {
+                      "+": "TArduinoPacketElementFloatAngularGauge"
+                    }
+                  }
+                }
+              ]
+            },
+            "HeadMarker": {
+              "Bytes": {
+                "_Data": ""
+              }
+            },
+            "+": "TArduinoPacket"
+          },
+          "Type": "Component",
+          "Y": 384
+        },
+        {
+          "X": 496,
+          "Name": "AccelerationToAngle1",
+          "Instance": {
+            "InputPins": {
+              "Pins": [
+                {
+                  "Type": "ptSink",
+                  "SourcePin": {
+                    "Name": "__OpenWireRootUnit__.AccelerometerGyroscope1.Accelerometer.OutputPins.X(G)",
+                    "ID": "__OpenWireRootUnit__.AccelerometerGyroscope1.Accelerometer.OutputPins._Pin0"
+                  }
+                },
+                {
+                  "Type": "ptSink",
+                  "SourcePin": {
+                    "Name": "__OpenWireRootUnit__.AccelerometerGyroscope1.Accelerometer.OutputPins.Y(G)",
+                    "ID": "__OpenWireRootUnit__.AccelerometerGyroscope1.Accelerometer.OutputPins._Pin1"
+                  }
+                },
+                {
+                  "Type": "ptSink",
+                  "SourcePin": {
+                    "Name": "__OpenWireRootUnit__.AccelerometerGyroscope1.Accelerometer.OutputPins.Z(G)",
+                    "ID": "__OpenWireRootUnit__.AccelerometerGyroscope1.Accelerometer.OutputPins._Pin2"
+                  }
+                }
+              ],
+              "Count": 3,
+              "Form": "__OpenWireRootUnit__"
+            },
+            "OutputPins": {
+              "Pins": [
+                {
+                  "Type": "ptSource",
+                  "SinkPins": [
+                    {
+                      "Name": "__OpenWireRootUnit__.Packet2.Elements.Analog.InputPin",
+                      "ID": "__OpenWireRootUnit__.Packet2.Elements._Item0.InputPin"
+                    }
+                  ]
+                },
+                {
+                  "Type": "ptSource",
+                  "SinkPins": [
+                    {
+                      "Name": "__OpenWireRootUnit__.Packet2.Elements.Analog.InputPin",
+                      "ID": "__OpenWireRootUnit__.Packet2.Elements._Item1.InputPin"
+                    },
+                    {
+                      "ID": "__OpenWireRootUnit__.AnalogToInteger1.InputPin"
+                    }
+                  ]
+                },
+                {
+                  "Type": "ptSource",
+                  "SinkPins": [
+                    {
+                      "Name": "__OpenWireRootUnit__.Packet2.Elements.Analog.InputPin",
+                      "ID": "__OpenWireRootUnit__.Packet2.Elements._Item2.InputPin"
+                    }
+                  ]
+                }
+              ],
+              "Count": 3,
+              "Form": "__OpenWireRootUnit__"
+            },
+            "+": "TArduinoAccelerationToAngle"
+          },
+          "Type": "Component",
+          "Y": 384
+        },
+        {
+          "X": 368,
+          "Name": "Force_to_Torque",
+          "Instance": {
+            "Value": 0.170000001788139,
+            "OutputPin": {
+              "SinkPins": [
+                {
+                  "Name": "__OpenWireRootUnit__.Packet1.Elements.Analog.InputPin",
+                  "ID": "__OpenWireRootUnit__.Packet1.Elements._Item0.InputPin"
+                }
+              ]
+            },
+            "+": "TArduinoMultiplyByValue",
+            "InputPin": {
+              "SourcePin": {
+                "Name": "__OpenWireRootUnit__.Arduino.Digital[16].OutputPin",
+                "ID": "__OpenWireRootUnit__.Arduino.Digital._Item16.OutputPin"
+              }
+            }
+          },
+          "Type": "Component",
+          "Y": 288
+        },
+        {
+          "X": 832,
+          "Name": "crank_rev",
+          "Instance": {
+            "InputPin": {
+              "SourcePins": [
+                {
+                  "ID": "__OpenWireRootUnit__.AnalogToInteger1.OutputPin"
+                }
+              ]
+            },
+            "+": "TArduinoCounter"
+          },
+          "Type": "Component",
+          "Y": 688
+        },
+        {
+          "X": 672,
+          "Name": "AnalogToInteger1",
+          "Instance": {
+            "OutputPin": {
+              "SinkPins": [
+                {
+                  "ID": "__OpenWireRootUnit__.crank_rev.InputPin"
+                }
+              ]
+            },
+            "InputPin": {
+              "SourcePin": {
+                "Name": "__OpenWireRootUnit__.AccelerationToAngle1.OutputPins.Y(Pitch)",
+                "ID": "__OpenWireRootUnit__.AccelerationToAngle1.OutputPins._Pin1"
+              }
+            },
+            "+": "TArduinoFloatToInteger"
+          },
+          "Type": "Component",
+          "Y": 704
+        }
+      ]
+    }
+  ]
+}
